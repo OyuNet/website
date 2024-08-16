@@ -22,12 +22,12 @@
 
   async function copyRoomId() {
     await navigator.clipboard.writeText(roomId);
-    toast.success('Room ID copied to clipboard');
+    toast.success('Room ID copied to clipboard', { duration: 3000, position: 'top-right' });
   }
 
   async function copyMessage(msg: string) {
     await navigator.clipboard.writeText(msg);
-    toast.success('Message copied to clipboard');
+    toast.success('Message copied to clipboard', { duration: 3000, position: 'top-right' });
   }
 
   async function loadRoomData() {
@@ -108,7 +108,7 @@
     isLoading = true;
     try {
       await leaveRoom(roomId, userId);
-      toast.success('Left the room successfully');
+      toast.success('Left the room successfully', { duration: 3000, position: 'top-right' });
       goto('/create/room');
     } catch (err) {
       error = 'Failed to leave room';
