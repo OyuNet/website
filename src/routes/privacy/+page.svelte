@@ -79,12 +79,12 @@
         <li>Any metadata related to your messages</li>
       </ul>
 
-      <h4 class="text-lg font-semibold mb-2">6. Unlimited Message and Room Creation</h4> <!-- Güncellenmiş Başlık -->
+      <h4 class="text-lg font-semibold mb-2">6. Unlimited Message and Room Creation</h4>
       <p class="mb-4">
         There are no restrictions on the number of messages or rooms you can create. You're free to use our service as often as you need, always with the same level of privacy and security.
       </p>
 
-      <h4 class="text-lg font-semibold mb-2">7. Room Privacy</h4> <!-- Yeni Başlık -->
+      <h4 class="text-lg font-semibold mb-2">7. Room Privacy</h4>
       <p class="mb-4">
         When you create a room, no personal data is collected. Room IDs and user IDs are used solely for the purpose of facilitating the messaging service. These identifiers are not stored beyond the session and are not used for tracking or profiling users.
       </p>
