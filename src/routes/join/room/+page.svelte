@@ -9,6 +9,7 @@
   let userId = '';
   let status = false;
   let joinRoomId = '';
+  let roomPassword = '';
   let isLoading = false;
   let error = '';
   let isPageLoading = true;
@@ -28,11 +29,11 @@
     error = '';
 
     try {
-      await joinRoom(joinRoomId, userId);
+      await joinRoom(joinRoomId, userId, roomPassword);
       localStorage.setItem('userId', userId);
       toast.success('Joined room successfully!', { duration: 3000, position: 'top-right' });
       goto(`/room/${joinRoomId}`);
-    } catch {
+    } catch (err) {
       error = 'Failed to join room. Please try again.';
     } finally {
       isLoading = false;
@@ -59,10 +60,12 @@
   <div class="w-full max-w-lg">
     <h2 class="text-2xl font-bold text-center mb-6">Join Room</h2>
     <div>
-      <p class="mb-2 text-sm">Enter your User ID to create a room.</p>
+      <p class="mb-2 text-sm">Enter your User ID to join a room.</p>
       <input bind:value={userId} type="text" placeholder="User ID" class="w-full mb-4 p-2 rounded-lg border-2 border-dark-green focus:outline-none" />
       <p class="mb-2 text-sm">Enter the Room ID to join a room.</p>
       <input bind:value={joinRoomId} type="text" placeholder="Room ID" class="w-full mb-4 p-2 rounded-lg border-2 border-dark-green focus:outline-none" />
+      <p class="mb-2 text-sm">Enter the Room Password (if required).</p>
+      <input bind:value={roomPassword} type="password" placeholder="Room Password" class="w-full mb-4 p-2 rounded-lg border-2 border-dark-green focus:outline-none" />
       
       <button on:click={handleJoinRoom} class="px-6 py-2 border-2 border-light-green bg-light-green rounded-lg disabled:opacity-50" disabled={userId === '' || joinRoomId === '' || isLoading}>
         <i class="ri-door-line mr-1"></i> {isLoading ? 'Joining...' : 'Join Room'}

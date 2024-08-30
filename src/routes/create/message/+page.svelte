@@ -72,7 +72,7 @@
           <textarea id="message" bind:value={message} rows="4" class="w-full px-3 py-2 border-2 border-dark-green rounded-lg focus:outline-none" placeholder="Enter your message here..."></textarea>
         </div>
         <button type="submit" class="px-6 py-2 border-2 border-light-green bg-light-green rounded-lg disabled:opacity-50" disabled={!message || isLoading}>
-          <i class="ri-send-plane-fill align-middle mr-1"></i> {isLoading ? 'Encrypting...' : 'Encrypt'}
+          <i class="ri-send-plane-fill  mr-1"></i> {isLoading ? 'Encrypting...' : 'Encrypt'}
         </button>
       </form>
 
@@ -90,10 +90,10 @@
           </div>
           <div class="mt-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
             <button on:click={copyToClipboard} class="px-6 py-2 border-2 border-light-green bg-light-green rounded-lg">
-              <i class="ri-clipboard-line align-middle mr-1"></i> Copy Encrypted Message
+              <i class="ri-clipboard-line  mr-1"></i> Copy Encrypted Message
             </button>
             <button on:click={() => goto(`/view`)} class="px-6 py-2 border-2 border-dark-green rounded-lg">
-              <i class="ri-eye-fill align-middle mr-1"></i> View Encrypted Message
+              <i class="ri-eye-fill  mr-1"></i> View Encrypted Message
             </button>
           </div>
           <p class="mt-2 text-sm text-dark-green/70">The message will be automatically deleted after 2 hours.</p>

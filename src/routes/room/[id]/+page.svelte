@@ -108,6 +108,7 @@
     isLoading = true;
     try {
       await leaveRoom(roomId, userId);
+      sendMessage(roomId, "System", `${userId} has left the room.`);
       toast.success('Left the room successfully', { duration: 3000, position: 'top-right' });
       goto('/create/room');
     } catch (err) {
@@ -145,7 +146,11 @@
       <ul class="mb-4 max-h-[calc(100vh-250px)] sm:max-h-[calc(100vh-300px)] md:max-h-[calc(100vh-350px)] lg:max-h-[calc(100vh-400px)] xl:max-h-[calc(100vh-450px)] overflow-y-auto">
         {#each messages as msg (msg.id)}
           <li class="mb-4 p-3 bg-gray-50 rounded-lg relative group">
-            <strong>{msg.userId}:</strong>
+            {#if msg.userId === "System"}
+              <strong class="mr-1 text-red-500"><i class="ri-information-line"></i> {msg.userId}</strong>
+            {:else}
+              <strong>{msg.userId}:</strong>
+            {/if}
             <p>
               {#each msg.message.split(/(\s+)/) as part}
                 {#if part.trim().startsWith('http://') || part.trim().startsWith('https://')}
@@ -208,7 +213,7 @@
 <section class="flex items-center justify-center min-h-screen py-12 px-4">
   <div class="w-full max-w-lg">
     <div class="bg-red-100 p-3 rounded-full">
-        <p class="text-center text-red-600"><i class="ri-error-warning-fill align-middle mr-1"></i> System is currently offline. Please check back later.</p>
+        <p class="text-center text-red-600"><i class="ri-error-warning-fill  mr-1"></i> System is currently offline. Please check back later.</p>
     </div>
   </div>
 </section>

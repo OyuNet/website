@@ -82,7 +82,7 @@
           <textarea id="message" bind:value={message} rows="4" class="w-full px-3 py-2 rounded-lg border-2 border-dark-green focus:outline-none" placeholder="Enter your message here..."></textarea>
         </div>
         <button type="submit" class="px-6 py-2 border-2 border-light-green bg-light-green rounded-lg disabled:opacity-50" disabled={!message || isLoading}>
-          <i class="ri-send-plane-fill align-middle mr-1"></i> {isLoading ? 'Decrypting...' : 'Decrypt'}
+          <i class="ri-send-plane-fill  mr-1"></i> {isLoading ? 'Decrypting...' : 'Decrypt'}
         </button>
       </form>
 
@@ -100,10 +100,10 @@
           </div>
           <div class="mt-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
             <button on:click={copyToClipboard} class="px-6 py-2 border-2 border-light-green bg-light-green rounded-lg">
-              <i class="ri-clipboard-line align-middle mr-1"></i> Copy Decrypted Message
+              <i class="ri-clipboard-line  mr-1"></i> Copy Decrypted Message
             </button>
             <button on:click={downloadResult} class="px-6 py-2 border-2 border-dark-green rounded-lg">
-              <i class="ri-download-2-fill align-middle mr-1"></i> Download Decrypted Message
+              <i class="ri-download-2-fill  mr-1"></i> Download Decrypted Message
             </button>
           </div>
           <p class="mt-2 text-sm text-dark-green/70">The message will be automatically deleted after 2 hours.</p>
